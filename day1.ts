@@ -5,11 +5,12 @@ import { assertEquals } from "https://deno.land/std@0.208.0/assert/mod.ts";
 // const calibrationVals = temp0.innerText.split("\n"); 
 
 const sum = (a: number, c: number) => a + c;
+const isNum = (n: string) => Number(n);
 
 function adventOfCode2023Day1( calibrationVals: Array<string>): number {
     return calibrationVals.map(calibrationString => {
         const charArr = Array.from(calibrationString);
-        return Number(charArr.find( n => Number(n)) + charArr.findLast( n => Number(n))!)
+        return Number(charArr.find( isNum ) + charArr.findLast( isNum )!)
     }).reduce(sum); 
 }
 
